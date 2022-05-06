@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input mode hidden test</title>
+    <style>
+      form {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      input,
+      label {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <label for="test">Test input no keyboard</label>
+      <input type="text" name="test" id="test" inputmode="none" />
+      <label for="test2">Test input keyboard</label>
+      <input type="text" name="test2" id="test2" />
+    </form>
+
+    <script>
+      const test = document.getElementById("test");
+      const onFocus = (event) => console.log('focused');
+      test.onfocus = onFocus;
+    </script>
+  </body>
+</html>
