@@ -21,6 +21,7 @@
   </head>
   <body>
     <form action="">
+      <input type="text" name="test" id="hidden" hidden />
       <label for="test">Test input no keyboard</label>
       <input type="text" name="test" id="test" inputmode="none" />
       <label for="test2">Test input keyboard</label>
@@ -28,8 +29,16 @@
     </form>
 
     <script>
+      function onload(event) {
+        const hidden = document.querySelector("input[hidden]");
+        hidden.focus();
+        hidden.blur();
+        console.log("focused/blurred");
+      }
+
+      document.addEventListener("DOMContentLoaded", onload);
       const test = document.getElementById("test");
-      const onFocus = (event) => console.log('focused');
+      const onFocus = (event) => console.log("focused");
       test.onfocus = onFocus;
     </script>
   </body>
