@@ -29,17 +29,19 @@
     </form>
 
     <script>
-      function onload(event) {
+      const onFocus = (event) => console.log("focused");
+
+      const onload = (event) => {
         const hidden = document.querySelector("input[hidden]");
         hidden.focus();
         hidden.blur();
         console.log("focused/blurred");
+        const test = document.getElementById("test");
+        test.focus();
+        test.onfocus = onFocus;
       }
 
       document.addEventListener("DOMContentLoaded", onload);
-      const test = document.getElementById("test");
-      const onFocus = (event) => console.log("focused");
-      test.onfocus = onFocus;
     </script>
   </body>
 </html>
