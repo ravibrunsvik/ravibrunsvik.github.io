@@ -7,20 +7,21 @@
     <title>Display properties</title>
   </head>
   <body>
+    <h1>Device pixel info</h1>
     <script>
       const onload = () => {
         const width = `Device width: ${window.innerWidth}`;
         const height = `Device height: ${window.innerHeight}`;
         const ratio = `Pixel ratio: ${window.devicePixelRatio}`;
 
-        [width, height, ratio].forEach((item) => {
+        [width, height, ratio].forEach((string) => {
           const paragraph = document.createElement("p");
-          p.innerText = item;
-          document.body.append(p);
+          paragraph.innerText = string;
+          document.body.append(paragraph);
         });
       };
 
-      document.onload = onload;
+      document.addEventListener('DOMContentLoaded', onload);
     </script>
   </body>
 </html>
